@@ -1,6 +1,6 @@
 const express = require('express')
 const users = require('../user-json')
-const findUserById = require('./findUserById')
+const findUserById = require('./user-controller')
 
 const router = express.Router()
 
@@ -36,7 +36,7 @@ router.get('/users', (req, res) => {
     }
 });
 
-router.get('/users/:id', findUserById, (req, res) => {
+router.get('/users/:id', controller, (req, res) => {
 try {
     res.json(req.user);
 }catch(err){

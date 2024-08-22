@@ -1,6 +1,6 @@
 const users = require('../user-json')
 
-function findUserById(req, res, next) {
+function controller(req, res, next) {
     const id = req.params.id || req.query.id;
     const foundUser = users.find(user => user.id === id);
 
@@ -12,4 +12,4 @@ function findUserById(req, res, next) {
     }
 }
 
-module.exports = findUserById
+module.exports = controller
